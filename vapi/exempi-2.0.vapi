@@ -318,51 +318,39 @@ namespace Xmp {
         }
 
         [CCode (cname = "__vala_xmp_get_property_float")]
-        public bool get_property_float (string schema, string name, out double property, ref PropsBits? props_bits) {
+        public bool get_property_float (string schema, string name, out double property, out PropsBits props_bits) {
             bool retval;
-            if (props_bits == null) {
-                retval = get_property_float_xmp_str (schema, name, out property, null);
-            } else {
-                uint32 bits = 0x0;
-                retval = get_property_float_xmp_str (schema, name, out property, out bits);
-                props_bits = (PropsBits) bits;
-            }
+            uint32 bits = 0x0;
+            retval = get_property_float_xmp_str (schema, name, out property, out bits);
+            props_bits = (PropsBits) bits;
             return retval;
         }
         [CCode (cname = "xmp_get_property_float")]
-        private bool get_property_float_xmp_str (string schema, string name, out double property, out uint32? propsbits);
+        private bool get_property_float_xmp_str (string schema, string name, out double property, out uint32 propsbits);
 
         [CCode (cname = "__vala_xmp_get_property_bool")]
-        public bool get_property_bool (string schema, string name, out bool property, ref PropsBits? props_bits) {
+        public bool get_property_bool (string schema, string name, out bool property, out PropsBits props_bits) {
             bool retval;
-            if (props_bits == null) {
-                retval = get_property_bool_xmp (schema, name, out property, null);
-            } else {
-                uint32 bits = 0x0;
-                retval = get_property_bool_xmp (schema, name, out property, out bits);
-                props_bits = (PropsBits) bits;
-            }
+            uint32 bits = 0x0;
+            retval = get_property_bool_xmp (schema, name, out property, out bits);
+            props_bits = (PropsBits) bits;
             return retval;
         }
 
         [CCode (cname = "xmp_get_property_bool")]
-        private bool get_property_bool_xmp (string schema, string name, out bool property, out uint32? bits);
+        private bool get_property_bool_xmp (string schema, string name, out bool property, out uint32 bits);
 
         [CCode (cname = "__vala_xmp_get_property_int")]
-        public bool get_property_int (string schema, string name, out int property, ref PropsBits? props_bits) {
+        public bool get_property_int (string schema, string name, out int property, out PropsBits props_bits) {
             bool retval;
-            if (props_bits == null) {
-                retval = get_property_int32 (schema, name, out property, null);
-            } else {
-                uint32 bits = 0x0;
-                retval = get_property_int32 (schema, name, out property, out bits);
-                props_bits = (PropsBits) bits;
-            }
+            uint32 bits = 0x0;
+            retval = get_property_int32 (schema, name, out property, out bits);
+            props_bits = (PropsBits) bits;
             return retval;
         }
 
         [CCode (cname = "xmp_get_property_int32")]
-        private bool get_property_int32 (string schema, string name, out int32 property, out uint32? bits);
+        private bool get_property_int32 (string schema, string name, out int32 property, out uint32 bits);
 
         [CCode (cname = "__vala_xmp_get_array_item")]
         public bool get_array_item (string schema, string name, int32 index, out string property, out PropsBits props_bits) {

@@ -15,7 +15,7 @@ including:
 ## Background
 
 The Vala bindings were developed by me in order to support Xmp Metadata in
-(Paper Clip)[https://apps.gnome.org/PdfMetadataEditor/], a PDF Metadata
+[Paper Clip](https://apps.gnome.org/PdfMetadataEditor/), a PDF Metadata
 editing app. For that same reason, these bindings use GLib more than other
 non-GIR bindings, as I prefered some utilities provided by it that I could
 better integrate with Paper Clip.
